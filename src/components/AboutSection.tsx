@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function AboutSection() {
@@ -18,6 +19,24 @@ export default function AboutSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="max-w-2xl text-center"
       >
+        {/* Alien gif */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-6"
+        >
+          <Image
+            src="/0069-alien.gif"
+            alt="eeffoc alien"
+            width={80}
+            height={80}
+            unoptimized
+            className="mx-auto rounded-full"
+          />
+        </motion.div>
+
         {/* Section title */}
         <h2 className="text-3xl md:text-5xl font-black tracking-[0.1em] uppercase mb-8 select-none">
           {"BEHIND THE VIBES".split("").map((char, i) => {

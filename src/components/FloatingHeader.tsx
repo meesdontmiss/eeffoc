@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SITE, SOCIAL_LINKS } from "@/lib/constants";
 
@@ -12,7 +13,7 @@ export default function FloatingHeader() {
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div
-        className="flex items-center justify-between px-4 py-3 md:px-8 md:py-0"
+        className="flex items-center justify-between px-4 py-2 md:px-8 md:py-0"
         style={{
           background: "rgba(22, 24, 35, 0.92)",
           backdropFilter: "blur(20px)",
@@ -20,21 +21,31 @@ export default function FloatingHeader() {
           borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}
       >
-        {/* Brand — Rasta per-letter colors */}
-        <motion.span
-          className="text-base font-black tracking-[0.18em] uppercase select-none"
-          whileHover={{ scale: 1.04 }}
-          style={{ fontWeight: 900 }}
-        >
-          {SITE.name.split("").map((char, i) => {
-            const colors = ["#3D9B35", "#FCD116", "#CE1126"];
-            return (
-              <span key={i} style={{ color: colors[i % 3] }}>
-                {char}
-              </span>
-            );
-          })}
-        </motion.span>
+        {/* Brand with alien gif */}
+        <div className="flex items-center gap-2">
+          <Image
+            src="/0069-alien.gif"
+            alt="eeffoc alien"
+            width={32}
+            height={32}
+            unoptimized
+            className="rounded-full"
+          />
+          <motion.span
+            className="text-base font-black tracking-[0.18em] uppercase select-none"
+            whileHover={{ scale: 1.04 }}
+            style={{ fontWeight: 900 }}
+          >
+            {SITE.name.split("").map((char, i) => {
+              const colors = ["#3D9B35", "#FCD116", "#CE1126"];
+              return (
+                <span key={i} style={{ color: colors[i % 3] }}>
+                  {char}
+                </span>
+              );
+            })}
+          </motion.span>
+        </div>
 
         {/* Desktop nav — TikTok "Following / For You" tab style */}
         <nav className="hidden md:flex items-end gap-0 h-12" aria-label="Social links">
