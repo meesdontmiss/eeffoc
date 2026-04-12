@@ -20,13 +20,20 @@ export default function FloatingHeader() {
           borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}
       >
-        {/* Brand — TikTok duotone logo treatment */}
+        {/* Brand — Rasta per-letter colors */}
         <motion.span
-          className="text-base font-black tracking-[0.18em] uppercase select-none text-white text-duotone"
+          className="text-base font-black tracking-[0.18em] uppercase select-none"
           whileHover={{ scale: 1.04 }}
           style={{ fontWeight: 900 }}
         >
-          {SITE.name}
+          {SITE.name.split("").map((char, i) => {
+            const colors = ["#3D9B35", "#FCD116", "#CE1126"];
+            return (
+              <span key={i} style={{ color: colors[i % 3] }}>
+                {char}
+              </span>
+            );
+          })}
         </motion.span>
 
         {/* Desktop nav — TikTok "Following / For You" tab style */}

@@ -27,15 +27,17 @@
 }
 
 html {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
-  overflow: hidden;
-  height: 100dvh;
+  overflow-x: hidden;
+  min-height: 100dvh;
 }
 
 @layer utilities {

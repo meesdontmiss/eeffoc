@@ -14,6 +14,7 @@ import SocialPills from "./SocialPills";
 import AmbientEffects from "./AmbientEffects";
 import ChiefingCounter from "./ChiefingCounter";
 import BackgroundMusic from "./BackgroundMusic";
+import AboutSection from "./AboutSection";
 import { useSoundEffects } from "@/lib/useSoundEffects";
 
 const SMOKE_DURATION = 1600;
@@ -67,10 +68,12 @@ export default function EeffocLanding() {
   }, [isSmoking, emit, playSmoke, playPing]);
 
   return (
-    <div
-      ref={containerRef}
-      className="relative h-dvh w-full overflow-hidden noise-overlay"
-    >
+    <div className="relative w-full overflow-y-auto overflow-x-hidden scroll-smooth">
+      {/* Hero Section */}
+      <div
+        ref={containerRef}
+        className="relative h-dvh w-full overflow-hidden noise-overlay"
+      >
       {/* Layer 0: Video montage background */}
       <HeroBackgroundMontage mouseX={mouse.x} mouseY={mouse.y} />
 
@@ -130,10 +133,29 @@ export default function EeffocLanding() {
 
           {/* Mobile social pills */}
           <SocialPills />
+
+          {/* Scroll indicator */}
+          <motion.a
+            href="#about"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, y: [0, 6, 0] }}
+            transition={{ 
+              opacity: { delay: 2, duration: 0.6 },
+              y: { delay: 2.5, duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+            }}
+            className="mt-4 md:mt-8 flex flex-col items-center gap-1 text-white/30 hover:text-white/60 transition-colors cursor-pointer"
+          >
+            <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+          </motion.a>
         </div>
       </div>
+      </div>
 
-
+      {/* About Section */}
+      <AboutSection />
     </div>
   );
 }
