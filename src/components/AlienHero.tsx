@@ -20,7 +20,7 @@ export default function AlienHero({ mouseX, mouseY, isSmoking, onSmoke }: AlienH
     <div className="relative flex items-center justify-center select-none">
       {/* Always-on idle pulse — subtle hint of interactivity */}
       <motion.div
-        className="absolute w-[240px] h-[240px] md:w-[520px] md:h-[520px] rounded-full pointer-events-none"
+        className="absolute w-[180px] h-[180px] md:w-[400px] md:h-[400px] rounded-full pointer-events-none"
         animate={{
           scale: isSmoking ? [1, 1.18, 1] : isHovered ? [1, 1.08, 1] : [1, 1.04, 1],
           opacity: isSmoking ? [0.7, 1, 0.7] : isHovered ? [0.7, 1, 0.7] : [0.15, 0.3, 0.15],
@@ -49,7 +49,7 @@ export default function AlienHero({ mouseX, mouseY, isSmoking, onSmoke }: AlienH
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
           whileTap={{ scale: 0.95 }}
-          className="relative w-[180px] h-[250px] md:w-[400px] md:h-[560px] cursor-pointer"
+          className="relative w-[140px] h-[195px] md:w-[320px] md:h-[450px] cursor-pointer"
         >
           {/* Hover glow overlay */}
           <motion.div
