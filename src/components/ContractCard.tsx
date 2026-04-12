@@ -12,7 +12,7 @@ export default function ContractCard() {
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 1.2, duration: 0.7, ease: "easeOut" }}
-      className="w-full max-w-sm md:max-w-md"
+      className="w-full max-w-[320px] md:max-w-md px-2 md:px-0"
     >
       {/* TikTok search-bar style container */}
       <div

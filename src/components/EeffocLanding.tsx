@@ -89,13 +89,13 @@ export default function EeffocLanding() {
       {/* Layer 4: Main content */}
       <div className="relative z-30 flex h-full flex-col items-center justify-center px-4 md:px-8 pt-16 pb-14 md:pt-20 md:pb-16 overflow-y-auto">
         {/* Hero section */}
-        <div className="flex flex-col items-center gap-3 md:gap-6 lg:gap-8">
+        <div className="flex flex-col items-center gap-2 md:gap-6 lg:gap-8">
           {/* Brand name — rasta per-letter colors */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-[0.15em] uppercase select-none"
+            className="text-4xl md:text-7xl lg:text-8xl font-black tracking-[0.12em] md:tracking-[0.15em] uppercase select-none"
             style={{ fontWeight: 900 }}
           >
             {SITE.name.split("").map((char, i) => {

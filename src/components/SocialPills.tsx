@@ -9,7 +9,7 @@ export default function SocialPills() {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.4, duration: 0.5 }}
-      className="flex items-center justify-center gap-2 md:hidden flex-wrap"
+      className="flex items-center justify-center gap-1.5 md:hidden flex-wrap px-4"
       aria-label="Social links"
     >
       {SOCIAL_LINKS.map((link, i) => (

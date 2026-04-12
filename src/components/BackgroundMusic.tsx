@@ -59,7 +59,7 @@ export default function BackgroundMusic({ triggerPlay }: BackgroundMusicProps) {
         whileHover={{ scale: 1.12 }}
         whileTap={{ scale: 0.92 }}
         aria-label={playing ? "Pause music" : "Play music"}
-        className="fixed bottom-5 right-5 z-50 flex h-10 w-10 items-center justify-center rounded-full"
+        className="fixed bottom-20 right-4 md:bottom-5 md:right-5 z-50 flex h-10 w-10 items-center justify-center rounded-full"
         style={{
           background: "rgba(22,24,35,0.88)",
           border: `1px solid ${playing ? "rgba(61,155,53,0.6)" : "rgba(255,255,255,0.12)"}`,
