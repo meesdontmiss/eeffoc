@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { SITE, SOCIAL_LINKS } from "@/lib/constants";
 
@@ -21,31 +20,21 @@ export default function FloatingHeader() {
           borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}
       >
-        {/* Brand with alien gif */}
-        <div className="flex items-center gap-2">
-          <Image
-            src="/0069-alien.gif"
-            alt="eeffoc alien"
-            width={32}
-            height={32}
-            unoptimized
-            className="rounded-full"
-          />
-          <motion.span
-            className="text-base font-black tracking-[0.18em] uppercase select-none"
-            whileHover={{ scale: 1.04 }}
-            style={{ fontWeight: 900 }}
-          >
-            {SITE.name.split("").map((char, i) => {
-              const colors = ["#3D9B35", "#FCD116", "#CE1126"];
-              return (
-                <span key={i} style={{ color: colors[i % 3] }}>
-                  {char}
-                </span>
-              );
-            })}
-          </motion.span>
-        </div>
+        {/* Brand — Rasta per-letter colors */}
+        <motion.span
+          className="text-base font-black tracking-[0.18em] uppercase select-none"
+          whileHover={{ scale: 1.04 }}
+          style={{ fontWeight: 900 }}
+        >
+          {SITE.name.split("").map((char, i) => {
+            const colors = ["#3D9B35", "#FCD116", "#CE1126"];
+            return (
+              <span key={i} style={{ color: colors[i % 3] }}>
+                {char}
+              </span>
+            );
+          })}
+        </motion.span>
 
         {/* Desktop nav — TikTok "Following / For You" tab style */}
         <nav className="hidden md:flex items-end gap-0 h-12" aria-label="Social links">
