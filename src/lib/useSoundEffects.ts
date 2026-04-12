@@ -7,7 +7,7 @@ export function useSoundEffects() {
 
   useEffect(() => {
     smokeAudioRef.current = new Audio("/freesound_community-fumar-6420.mp3");
-    smokeAudioRef.current.volume = 0.6;
+    smokeAudioRef.current.volume = 0.95;
   }, []);
 
   const playSmoke = useCallback(() => {
