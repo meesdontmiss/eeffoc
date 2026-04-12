@@ -27,7 +27,7 @@ export default function EeffocLanding() {
   const [puffCount, setPuffCount] = useState<number | null>(null);
   const [musicTrigger, setMusicTrigger] = useState(false);
   const { particles, emit } = useSmokeEmitter();
-  const { playSmoke, playPing } = useSoundEffects();
+  const { playSmoke } = useSoundEffects();
 
   useEffect(() => {
     fetch("/api/puffs")
@@ -41,7 +41,6 @@ export default function EeffocLanding() {
     setIsSmoking(true);
     setMusicTrigger(true);
     playSmoke();
-    setTimeout(() => playPing(), 600);
 
     const containerEl = containerRef.current;
     if (containerEl) {
@@ -66,7 +65,7 @@ export default function EeffocLanding() {
     setTimeout(() => {
       setIsSmoking(false);
     }, SMOKE_DURATION);
-  }, [isSmoking, emit, playSmoke, playPing]);
+  }, [isSmoking, emit, playSmoke]);
 
   return (
     <div className="relative w-full overflow-y-auto overflow-x-hidden scroll-smooth">
