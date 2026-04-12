@@ -13,6 +13,7 @@ import ContractCard from "./ContractCard";
 import SocialPills from "./SocialPills";
 import AmbientEffects from "./AmbientEffects";
 import ChiefingCounter from "./ChiefingCounter";
+import SocialIcons from "./SocialIcons";
 import BackgroundMusic from "./BackgroundMusic";
 import AboutSection from "./AboutSection";
 import { useSoundEffects } from "@/lib/useSoundEffects";
@@ -127,6 +128,9 @@ export default function EeffocLanding() {
 
           {/* Chiefing counter */}
           <ChiefingCounter count={puffCount} />
+
+          {/* Social icons */}
+          <SocialIcons />
 
           {/* Contract card */}
           <ContractCard />
