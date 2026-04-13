@@ -68,11 +68,12 @@ export default function EeffocLanding() {
   }, [isSmoking, emit, playSmoke]);
 
   return (
-    <div className="relative w-full overflow-y-auto overflow-x-hidden scroll-smooth">
+    <div className="relative w-full overflow-x-hidden">
       {/* Hero Section */}
       <div
         ref={containerRef}
-        className="relative h-dvh w-full overflow-hidden noise-overlay"
+        id="top"
+        className="relative min-h-dvh w-full noise-overlay flex flex-col"
       >
       {/* Layer 0: Video montage background */}
       <HeroBackgroundMontage mouseX={mouse.x} mouseY={mouse.y} />
@@ -90,9 +91,9 @@ export default function EeffocLanding() {
       <FloatingHeader />
 
       {/* Layer 4: Main content */}
-      <div className="relative z-30 flex h-full flex-col items-center justify-start px-4 md:px-8 pt-16 pb-6 md:pt-20 md:pb-10 overflow-y-auto">
+      <div className="relative z-30 flex flex-1 flex-col items-center justify-center px-4 md:px-8 py-6 md:py-10">
         {/* Hero section */}
-        <div className="flex flex-col items-center gap-1 md:gap-3 lg:gap-4 mt-2 md:mt-4">
+        <div className="flex flex-col items-center gap-1 md:gap-3 lg:gap-4">
           {/* Brand name — rasta per-letter colors */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.95 }}
