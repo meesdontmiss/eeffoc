@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function AboutSection() {
@@ -67,20 +68,31 @@ export default function AboutSection() {
         </div>
 
         {/* TikTok link */}
-        <motion.a
-          href="https://www.tiktok.com/@3iballer"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center gap-2 mt-10 px-6 py-3 rounded-full text-sm font-bold tracking-wider uppercase transition-all"
-          style={{
-            background: "#FE2C55",
-            color: "white",
-          }}
-        >
-          Follow @3iballer
-        </motion.a>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <motion.a
+            href="https://www.tiktok.com/@3iballer"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold tracking-wider uppercase transition-all"
+            style={{
+              background: "#FE2C55",
+              color: "white",
+            }}
+          >
+            Follow @3iballer
+          </motion.a>
+
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold tracking-wider uppercase transition-all border border-[#3D9B35]/70 bg-[#0f170d] text-[#7dd46a] hover:bg-[#1a2615]"
+            >
+              Open Gallery
+            </Link>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );

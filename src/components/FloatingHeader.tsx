@@ -21,20 +21,22 @@ export default function FloatingHeader() {
         }}
       >
         {/* Brand — Rasta per-letter colors */}
-        <motion.span
-          className="text-base font-black tracking-[0.18em] uppercase select-none"
-          whileHover={{ scale: 1.04 }}
-          style={{ fontWeight: 900 }}
-        >
-          {SITE.name.split("").map((char, i) => {
-            const colors = ["#3D9B35", "#FCD116", "#CE1126"];
-            return (
-              <span key={i} style={{ color: colors[i % 3] }}>
-                {char}
-              </span>
-            );
-          })}
-        </motion.span>
+        <a href="#top" className="no-underline">
+          <motion.span
+            className="text-base font-black tracking-[0.18em] uppercase select-none"
+            whileHover={{ scale: 1.04 }}
+            style={{ fontWeight: 900 }}
+          >
+            {SITE.name.split("").map((char, i) => {
+              const colors = ["#3D9B35", "#FCD116", "#CE1126"];
+              return (
+                <span key={i} style={{ color: colors[i % 3] }}>
+                  {char}
+                </span>
+              );
+            })}
+          </motion.span>
+        </a>
 
         {/* Desktop nav — TikTok "Following / For You" tab style */}
         <nav className="hidden md:flex items-end gap-0 h-12" aria-label="Social links">
